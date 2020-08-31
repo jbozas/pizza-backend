@@ -12,6 +12,10 @@ const db = require('./models')
 db.sequelize.sync()
 
 require('./routes/pizza.routes')(app)
+require('./routes/ticket.routes')(app)
+require('./routes/ticketdetail.routes')(app)
+require('./routes/user.routes')(app)
+require('./routes/guestdetail.routes')(app)
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080

@@ -5,13 +5,6 @@ const Op = db.Sequelize.Op
 // Create and Save a new Ticket Detail
 exports.create = (req, res) => {
   console.log(req)
-  // Validate request
-  if (!req.body.title) {
-    res.status(400).send({
-      message: 'Content can not be empty!',
-    })
-    return
-  }
 
   const ticketDetail = {
     pizza: req.body.pizza,

@@ -19,9 +19,10 @@ const db = {}
 db.Sequelize = Sequelize
 db.sequelize = sequelize
 
-// db.user = require('./user.model.js')(sequelize, Sequelize)
-// db.ticket = require('./ticket.model.js')(sequelize, Sequelize)
-// db.ticketDetail = require('./ticketDetail.model.js')(sequelize, Sequelize)
+db.guestdetail = require('./guestdetail.model.js')(sequelize, Sequelize)
+db.user = require('./user.model.js')(sequelize, Sequelize)
+db.ticket = require('./ticket.model.js')(sequelize, Sequelize)
+db.ticketDetail = require('./ticketDetail.model.js')(sequelize, Sequelize)
 db.pizza = require('./pizza.model.js')(sequelize, Sequelize)
 
 module.exports = db

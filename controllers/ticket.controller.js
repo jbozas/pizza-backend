@@ -5,13 +5,6 @@ const Op = db.Sequelize.Op
 // Create and Save a new Ticket
 exports.create = (req, res) => {
   console.log(req)
-  // Validate request
-  if (!req.body.title) {
-    res.status(400).send({
-      message: 'Content can not be empty!',
-    })
-    return
-  }
 
   // Create a
   // If there is no user logged in, assign a guestdetail

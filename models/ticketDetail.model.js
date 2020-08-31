@@ -15,13 +15,13 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: 1,
     },
     pizza: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       references: 'pizzas',
       referencesKey: 'id',
     }
   })
 
-  TicketDetail.hasOne(Pizza);
+  // TicketDetail.hasOne(Pizza);
 
   return TicketDetail
 }

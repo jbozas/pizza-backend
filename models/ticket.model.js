@@ -1,3 +1,5 @@
+const User = require('./user.model.js')
+console.log(User)
 module.exports = (sequelize, DataTypes) => {
   const Ticket = sequelize.define('ticket', {
     id: {
@@ -22,27 +24,27 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     user: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       references: 'users', // <<< Note, its table's name, not object name
       referencesKey: 'id', // <<< Note, its a column name
       allowNull: true,
     },
     guestDetail: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       references: 'guestdetails', // <<< Note, its table's name, not object name
       referencesKey: 'id', // <<< Note, its a column name
       allowNull: true,
     },
     ticketDetail: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       references: 'ticketdetails',
       referencesKey: 'id',
     }
   })
 
-  Ticket.hasOne(User);
-  Ticket.hasMany(TicketDetail);
-  Ticket.hasOne(GuestDetail);
+  // Ticket.hasOne(User);
+  // Ticket.hasMany(TicketDetail);
+  // Ticket.hasOne(GuestDetail);
 
   return Ticket
 }
